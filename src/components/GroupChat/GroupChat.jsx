@@ -11,7 +11,7 @@ const GroupChat = () => {
   const [userMessageArr, setUserMessageArr] = useState([]);
 
   useEffect(() => {
-    const socketInstance = io("http://127.0.0.1:4000");
+    const socketInstance = io("https://chit-chat-backend-81g3.onrender.com");
 
     socketInstance.on("connect", async () => {
       setSocket(socketInstance);
