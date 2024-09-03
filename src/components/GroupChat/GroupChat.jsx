@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import "./GroupChat.css";
 import { SocketProvider, useSocket } from "../../contexts/SocketProvider";
 import io from "socket.io-client";
@@ -9,6 +9,15 @@ const GroupChat = () => {
   const { socket, setSocket } = useSocket();
   const [userMessage, setUserMessage] = useState("");
   const [userMessageArr, setUserMessageArr] = useState([]);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [userMessageArr]);
 
   useEffect(() => {
     const socketInstance = io("https://chit-chat-backend-81g3.onrender.com");
@@ -87,6 +96,10 @@ const GroupChat = () => {
             </p>
           </div>
         ))}
+        <div
+          ref={messagesEndRef}
+          style={{ background: "white", height: "0" }}
+        />
       </div>
       <div className="groupChat_enterMessage">
         <form onSubmit={handleSendMessage}>
