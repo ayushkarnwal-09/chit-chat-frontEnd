@@ -1,0 +1,94 @@
+.groupChatMessages {
+  position: relative;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 95vh;
+  border: 1px solid black;
+}
+.groupChat_Title {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background: #c0c0c0;
+}
+.groupChat_TitleImg img {
+  width: 100%;
+  height: 100%;
+}
+.groupChat_messages {
+  height: 82%;
+  width: 100%;
+  background: #dcdcdc;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  box-sizing: border-box;
+  padding: 1%;
+  overflow-y: auto;
+}
+.groupChat_messages div {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+
+  max-width: 80%;
+}
+
+.groupChat_messages_name {
+  margin: 0;
+}
+
+.groupChat_messages_message {
+  margin: 0;
+  word-break: break-all;
+  padding: 0px 7px 0px 7px;
+  border-radius: 9px;
+}
+
+.groupChat_enterMessage {
+  height: 8%;
+  width: 100%;
+  overflow: hidden;
+}
+.groupChat_enterMessage form {
+  height: 100%;
+  width: 100%;
+}
+.groupChat_enterMessage input {
+  height: 100%;
+  width: 89%;
+  border: none;
+}
+.groupChat_enterMessage button {
+  width: 10%;
+  height: 100%;
+}
+
+@media only Screen and (max-width: 1038px) {
+  .groupChat_enterMessage button {
+    font-size: 12px;
+  }
+}
+
+@media only Screen and (max-width: 810px) {
+  .groupChat_enterMessage input {
+    width: 85%;
+  }
+  .groupChat_enterMessage button {
+    width: 13%;
+  }
+}
+
+@media only Screen and (max-width: 600px) {
+  .groupChat_enterMessage button {
+    font-size: 9px;
+  }
+  .groupChat_enterMessage input {
+    width: 85%;
+  }
+  .groupChat_enterMessage button {
+    width: 12%;
+  }
+}
