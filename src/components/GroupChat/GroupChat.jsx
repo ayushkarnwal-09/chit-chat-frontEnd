@@ -98,7 +98,7 @@ const GroupChat = () => {
         ))}
         <div
           ref={messagesEndRef}
-          style={{ background: "white", height: "0" }}
+          style={{ background: "#dcdcdc;", height: "0", width: "0" }}
         />
       </div>
       <div className="groupChat_enterMessage">
